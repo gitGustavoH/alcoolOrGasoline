@@ -1,5 +1,3 @@
-﻿# alcoolOrOil
-
  <H1 align="center">Alcool or Oil?</H1>
 
 <H2 aling="center">Description</H2>
