@@ -21,6 +21,45 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         incializarComponentesInterface()
+        btnCalcular.setOnClickListener {
+            calcularMelhorPreco()
+        }
+    }
+
+    private fun calcularMelhorPreco() {
+        val precoAlcool = editAlcool.text.toString()
+        val precoGasolina = editGasolina.text.toString()
+
+        val resultadoValidacao = validarCampos(precoAlcool, precoGasolina)
+        if (resultadoValidacao) {
+
+            val precoAlcoolNumero = precoAlcool.toDouble()
+            val precoGasolinaNumero = precoGasolina.toDouble()
+            val resultado = precoAlcoolNumero / precoGasolinaNumero
+
+            if (resultado >= 0.7) {
+                textResultado.text = "Melhor utilizar Gasolina"
+            }else{
+                textResultado.text = "Melhor utilizar Alcool"
+            }
+
+        }
+    }
+
+    private fun validarCampos(pAlcool: String, pGasolina: String): Boolean{
+
+        textInputAlcool.error = null
+        textInputGasolina.error = null
+
+        if (pAlcool.isEmpty()) {
+            textInputAlcool.error = "Digite o preço do alcool"
+            return false
+        }else if(pGasolina.isEmpty()) {
+            textInputGasolina.error = "Digite o preço da gasolina"
+            return false
+        }
+
+        return true
     }
 
     private fun incializarComponentesInterface() {
