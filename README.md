@@ -1,10 +1,10 @@
- <H1 align="center">Alcool or Oil?</H1>
+ <H1 align="center">Alcool or Gasoline?</H1>
 
 <H2 aling="center">Description</H2>
 
 <p>🚧  Status Project: Done 🚧</p>
 
-<p>This projetc is app to help you choose alcool or oil based on price.</p>
+<p>This projetc is app to help you choose alcool or gasoline based on price.</p>
 
 <p>The math used in this project is:
 result = priceAlcool / priceGasoline
